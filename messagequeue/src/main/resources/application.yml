@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: santhosh.p
+    password:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  cloud:
+    function:
+      definition: consume
+    stream:
+      kafka:
+        bindings:
+          consume-in-0:
+            group-id: hivel
+        binder:
+          kafka-properties:
+            bootstrapServers:
+              - localhost:9092
+      bindings:
+        produce-out-0:
+          destination: topic1
+        consume-in-0:
+          destination: topic1
+server:
+  port: 8085
+
