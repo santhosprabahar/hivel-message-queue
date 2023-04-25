@@ -1,9 +1,0 @@
-Design:
-1.This application uses spring cloud stream framework which helps create event-driven microservices fast and easy.
-2.Spring cloud stream abstracts the message queue implementation thus giving us option to switch between the queue without having us to change the code.
-3.The switching of message queue can be done just by making changes in binder properties of the configuration file.
-
-Challenges:
-1. Using the right binding and binder properties from spring cloud stream reference document deemed to be a challenge
-
-Trade-offs:
